@@ -2,7 +2,7 @@
 
 One service with the defaults: PostgreSQL, Hangfire, docker compose files, and CI.
 
-[![CI of single by day](reports/single/ci.svg)](https://dnsk.sawking.tech/samples.html#single)
+[![CI of single by day](reports/single/ci.svg)](https://dotskit.sawking.tech/samples.html#single)
 
 ![How to read the days](https://raw.githubusercontent.com/sawking-tech/DotNetSolutionKit.Samples/full/.samples/legend.svg)
 
