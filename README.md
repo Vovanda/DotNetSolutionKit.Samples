@@ -2,7 +2,7 @@
 
 SQL Server, xUnit, secrets from Vault, Kubernetes manifests and the audit journal, which rides on the bus with an outbox; two services.
 
-[![CI of full-alt by day](reports/full-alt/ci.svg)](https://dnsk.sawking.tech/samples.html#full-alt)
+[![CI of full-alt by day](reports/full-alt/ci.svg)](https://dotskit.sawking.tech/samples.html#full-alt)
 
 ![How to read the days](https://raw.githubusercontent.com/sawking-tech/DotNetSolutionKit.Samples/full/.samples/legend.svg)
 
