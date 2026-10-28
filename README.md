@@ -2,7 +2,7 @@
 
 Two services behind a YARP gateway that validates the token and forwards the user.
 
-[![CI of gateway by day](reports/gateway/ci.svg)](https://dnsk.sawking.tech/samples.html#gateway)
+[![CI of gateway by day](reports/gateway/ci.svg)](https://dotskit.sawking.tech/samples.html#gateway)
 
 ![How to read the days](https://raw.githubusercontent.com/sawking-tech/DotNetSolutionKit.Samples/full/.samples/legend.svg)
 
