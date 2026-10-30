@@ -53,7 +53,7 @@ jq -r --arg b "$branch" --arg s "$since" '.[] | select(.branch == $b) | .generat
 [ -s "$work/commands" ] || { echo "variants.json has no commands for $branch since $since" >&2; exit 1; }
 # A command that starts with dotskit runs the template's tool of the same version: built from the sources of a
 # branch, installed from nuget.org for a release. The folder is a fresh generation, not a team's git tree, so
-# the tool writes without asking and without a clean tree.
+# the tool writes without asking and without a clean tree, by its own merge (--merge files).
 dotskit_tool=""
 dotskit() {
     if [ -z "$dotskit_tool" ]; then
@@ -66,7 +66,12 @@ dotskit() {
             dotskit_tool=("$work/tool/dotskit")
         fi
     fi
-    "${dotskit_tool[@]}" "$@" --yes --allow-dirty
+    # --merge files with --allow-dirty: a git merge needs a clean tree, and this folder is a fresh generation.
+    # init takes neither option.
+    case "$1" in
+        new|upgrade) "${dotskit_tool[@]}" "$@" --yes --allow-dirty --merge files ;;
+        *) "${dotskit_tool[@]}" "$@" --yes ;;
+    esac
 }
 while read -r args; do
     # Word splitting of the arguments is intended.
